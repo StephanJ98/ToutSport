@@ -1,0 +1,42 @@
+#headerSpec {
+    width: 100%;
+    background-color: #fc4d03;
+}
+#searchContainerSpec {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+#headerTitleSpec {
+    width: 30%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #242428;
+}
+#searchSpec {
+    width: 70%;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-right: 40px;
+}
+#headerSearchSpec {
+    width: 80%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+}
+#headerSearchBtnSpec {
+    width: 20%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+}
+#headerSearchIconSpec {
+    font-size: 20px;
+}

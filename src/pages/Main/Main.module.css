@@ -1,0 +1,33 @@
+#mainContainer {
+    height: 100%;
+    overflow-y: scroll;
+}
+#mainContainer::-webkit-scrollbar {
+    display: none;
+}
+#mainBody {
+    height: 100%;
+    background-color: black;
+}
+#header {
+    height: 100px;
+}
+#carousel {
+    height: 100%;
+}
+.carouselItem {
+    height: 100%;
+}
+.sliderImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carouselTextLigth > * {
+    font-weight: 900;
+    color: whitesmoke;
+}
+.carouselTextDark > * {
+    font-weight: 900;
+    color: black;
+}
