@@ -37,7 +37,7 @@ export default function HeaderBis() {
     return (
         <div id={styles.header}>
             <section id={styles.searchContainerBis}>
-                <img id={styles.headerTitle} src={logo} onClick={handleClick}/>
+                <img id={styles.headerTitle} src={logo} onClick={handleClick} alt='Logo ToutSport Todo para Deportistas'/>
                 <div id={styles.search}>
                     <div id={styles.headerSearchBtn} onClick={() => setOpenPanel(true)}>
                         <FaSearch id={styles.headerSearchIcon} />

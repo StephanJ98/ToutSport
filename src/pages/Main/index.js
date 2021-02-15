@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header/Header'
 import Carousel from 'react-bootstrap/Carousel';
 import styles from './Main.module.css'
@@ -19,10 +19,39 @@ import ItemsContainerMainPage from '../../components/ItemsContainerMainPage';
 
 
 export default function Main() {
+
+    const [display, setDisplay] = useState('normal')
+
+    useEffect(() => {
+        let target = document.querySelector('#targetObserver')
+        let target2 = document.querySelector('.targetObserver2')
+        let observerDown = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setDisplay('none')
+                }
+            })
+        }, {
+            threshold: 0.75
+        })
+        observerDown.observe(target)
+
+        let observerUp = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setDisplay('normal')
+                }
+            })
+        }, {
+            threshold: 0.75
+        })
+        observerUp.observe(target2)
+    })
+
     return (
         <div id={styles.mainContainer}>
-            <Header id={styles.header} />
-            <section id={styles.mainBody}>
+            <Header display={display} />
+            <div id={styles.mainBody} className='targetObserver2'>
                 <Carousel id={styles.carousel} indicators={true} interval={2000}>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -142,8 +171,10 @@ export default function Main() {
                         />
                     </Carousel.Item>
                 </Carousel>
-            </section>
-            <ItemsContainerMainPage />
+            </div>
+            <div id='targetObserver'>
+                <ItemsContainerMainPage />
+            </div>
         </div>
     )
 }

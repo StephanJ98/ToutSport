@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import CategoryContextProvider from './Context/CategoryContext'
 import Main from './pages/Main'
 import Categories from './pages/Categories'
-import Video from './pages/Video'
 import Admin from './pages/Admin'
+import Product from './pages/Product'
 
 function App() {
   return (
@@ -16,9 +16,6 @@ function App() {
               <Main />
             </CategoryContextProvider>
           </Route>
-          <Route path='/video'>
-            <Video />
-          </Route>
           <Route path='/cat'>
             <CategoryContextProvider>
               <Categories />
@@ -27,6 +24,11 @@ function App() {
           <Route path='/adm'>
             <CategoryContextProvider>
               <Admin />
+            </CategoryContextProvider>
+          </Route>
+          <Route path='/product/:id'>
+            <CategoryContextProvider>
+              <Product />
             </CategoryContextProvider>
           </Route>
         </Switch>

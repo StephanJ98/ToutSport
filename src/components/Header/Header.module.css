@@ -4,6 +4,12 @@
     background-color: transparent;
     z-index: 100;
 }
+#headerNone {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    display: none;
+}
 #searchContainer {
     display: flex;
     flex-direction: row;
@@ -15,7 +21,12 @@
     margin-top: 5px;
     width: 65%;
 }
-@media (min-width: 550px) {
+@media (min-width: 500px) {
+    #headerTitle {
+        width: 50%;
+    }
+}
+@media (min-width: 1200px) {
     #headerTitle {
         width: 30%;
     }

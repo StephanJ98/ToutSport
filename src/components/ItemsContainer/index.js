@@ -1,21 +1,24 @@
 import React, { useContext } from 'react'
 import styles from './ItemsContainer.module.css'
+import { useHistory  } from "react-router-dom"
 import { CategoryContext } from '../../Context/CategoryContext'
 import data from '../../assets/data/data.js'
 
 export default function ItemsContainer() {
     const { category } = useContext(CategoryContext)
-    const items = []
+    let items = []
+    let history = useHistory()
+
+    const handleClick = (id) => {
+        history.push(`/product/${id}`)
+    }
 
     if (category === 'null' || category === '') {
         data.forEach(item => {
             items.push(
-                <div key={item.id} className={styles.itemContainer}>
+                <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
                     <p className={styles.text}>{item.title}</p>
-                    <div className={styles.textContainer}>
-                        <p className={styles.capitalize}>Deporte: {item.sport}</p>
-                        <p className={styles.capitalize}>Tienda: {item.store}</p>
-                    </div>
+                    <p className={styles.price}>{item.price} €</p>
                     <img className={styles.image} src={item.image} alt={item.title} />
                 </div>
             )
@@ -25,12 +28,9 @@ export default function ItemsContainer() {
         data.forEach(item => {
             if (category === item.sport) {
                 items.push(
-                    <div key={item.id} className={styles.itemContainer}>
+                    <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
                         <p className={styles.text}>{item.title}</p>
-                        <div className={styles.textContainer}>
-                            <p className={styles.capitalize}>Deporte: {item.sport}</p>
-                            <p className={styles.capitalize}>Tienda: {item.store}</p>
-                        </div>
+                        <p className={styles.price}>{item.price} €</p>
                         <img className={styles.image} src={item.image} alt={item.title} />
                     </div>
                 )
@@ -40,12 +40,14 @@ export default function ItemsContainer() {
     }
 
     return (
-        <div id={styles.itemsContainer}>
-            {items.length > 0 ? items : (
-                <div className={styles.itemContainer}>
-                    <p className={styles.text}>No hay elementos que coincidan con la busqueda</p>
+        items.length > 0 ? (
+            <div id={styles.itemsContainer}>
+                {items}
+            </div>
+        ) : (
+                <div className={styles.emptyContainer}>
+                    <p className={styles.emptyText}>No hay elementos que coincidan con la busqueda</p>
                 </div>
-            )}
-        </div>
+            )
     )
 }

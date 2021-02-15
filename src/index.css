@@ -3,6 +3,26 @@
   src: local('Roboto'), url(./fonts/Roboto-Regular.ttf) format('truetype');
 }
 
+@font-face {
+  font-family: 'Staatliches';
+  src: local('Staatliches'), url(./fonts/Staatliches-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: local('BebasNeue'), url(./fonts/BebasNeue-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: local('Oswald'), url(./fonts/Oswald-VariableFont_wght.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Imbue';
+  src: local('Imbue'), url(./fonts/Imbue-VariableFont_opsz_wght.ttf) format('truetype');
+}
+
 * {
   padding: 0;
   margin: 0;
