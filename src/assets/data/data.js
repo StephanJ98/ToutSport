@@ -1,4 +1,4 @@
-export default [
+let data = [
     {
         id: '0',
         image: "https://contents.mediadecathlon.com/p1916555/k$bb6586343feb1f0f78377139ddd2e406/sq/BICICLETA+DE+MONTA+A+ROCKRIDER+ST+520+V2+ALUMINIO+27+5+24V+GRIS+AMARILLO.webp?f=1000x1000",
@@ -88,3 +88,5 @@ export default [
         price: '50'
     },
 ]
+
+export default data
