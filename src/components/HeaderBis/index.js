@@ -8,15 +8,21 @@ import { FaSearch } from "react-icons/fa"
 import { IoIosCloseCircleOutline } from "react-icons/io"
 import logo from '../../assets/logo/ToutSport_Horizontal.png'
 
-export default function HeaderBis() {
+export default function HeaderBis(props) {
     const [openPanel, setOpenPanel] = useState(false)
     const [search, setSearch] = useState('')
     const { changeCategory } = useContext(CategoryContext)
     let history = useHistory()
+    let variant = styles.header
+
+    if (props.var !== 'normal') {
+        variant = styles.headerVar
+    }
 
     const handleSetCategoria = (elem) => {
         changeCategory(elem)
         setOpenPanel(false)
+        history.push("/cat")
     }
 
     const handleSearch = (event) => {
@@ -28,6 +34,7 @@ export default function HeaderBis() {
         const data = search.toLowerCase().trimStart().replace(/ /g,'_')
         setSearch('')
         handleSetCategoria(data)
+        history.push("/cat")
     }
 
     const handleClick = () => {
@@ -35,7 +42,7 @@ export default function HeaderBis() {
     }
 
     return (
-        <div id={styles.header}>
+        <div id={variant}>
             <section id={styles.searchContainerBis}>
                 <img id={styles.headerTitle} src={logo} onClick={handleClick} alt='Logo ToutSport Todo para Deportistas'/>
                 <div id={styles.search}>

@@ -3,6 +3,10 @@
     width: 100%;
     z-index: 100;
 }
+#headerVar {
+    width: 100%;
+    z-index: 100;
+}
 #searchContainerBis {
     display: flex;
     flex-direction: row;

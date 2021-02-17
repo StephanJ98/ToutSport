@@ -1,0 +1,74 @@
+#mainContainer {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+#mainContainer::-webkit-scrollbar {
+    display: none;
+}
+#title{
+    font-weight: bold;
+    font-size: 40px;
+}
+#text{
+    margin-right: 5px;
+    font-weight: bold;
+}
+#imgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px;
+}
+#image {
+    border-radius: 25px;
+    max-width: 100%;
+    height: auto;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 0px;
+    background-color: aliceblue;
+    margin: 25px;
+    border-radius: 25px;
+}
+.textSubContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: large;
+}
+@media (min-width: 800px) {
+    #container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+    #textContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 25px;
+        max-width: 500px;
+        width: 100%;
+        border-radius: 25px;
+        padding-top: 10px;
+        background-color: aliceblue;
+    }
+    .textSubContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: large;
+        padding-bottom: 100px;
+    }
+}
