@@ -1,13 +1,28 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './ItemsContainer.module.css'
-import { useHistory  } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { CategoryContext } from '../../Context/CategoryContext'
-import data from '../../assets/data/data.js'
 
 export default function ItemsContainer() {
     const { category } = useContext(CategoryContext)
+    const [data, setData] = useState([])
     let items = []
     let history = useHistory()
+
+    useEffect(() => {
+        if (data.length === 0) {
+            fetch('https://toutsport-api.herokuapp.com/list')
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        setData(result)
+                    },
+                    (error) => {
+                        console.log(error)
+                    }
+                )
+        }
+    })
 
     const handleClick = (id) => {
         history.push(`/product/${id}`)
