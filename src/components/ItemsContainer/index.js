@@ -11,7 +11,7 @@ export default function ItemsContainer() {
 
     useEffect(() => {
         if (data.length === 0) {
-            fetch(`https://toutsport-api.herokuapp.com/list`)
+            fetch('https://toutsport-api.herokuapp.com/list')
                 .then(res => res.json())
                 .then(
                     (result) => {
