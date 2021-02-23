@@ -19,8 +19,8 @@ export default function HeaderBis(props) {
         variant = styles.headerVar
     }
 
-    const handleSetCategoria = (elem) => {
-        changeCategory(elem)
+    const handleSetCategoria = async (elem) => {
+        await changeCategory(elem)
         setOpenPanel(false)
         history.push("/cat")
     }
