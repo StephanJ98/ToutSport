@@ -49,5 +49,4 @@
 - En el carousel quitar la cita y añadir un enlace a la pagina de la categoria correspondiente.
 - Añadir un apartado de contacto. Enlace a email o telegram.
 - Cambio de idioma {esto se añade cuando la web estea terminada}
-- Pagina que indique las mareas en la zona, records strava ... :x: :v:
--
+- Pagina que indique las mareas en la zona, records strava ... :x: :ok:
