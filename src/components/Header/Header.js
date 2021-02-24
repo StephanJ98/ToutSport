@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react'
-import { Link, useHistory  } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import styles from './Header.module.css'
 import { CategoryContext } from '../../Context/CategoryContext'
+import { DataContext } from '../../Context/DataContext'
 import SlidingPanel from 'react-sliding-side-panel'
 import 'react-sliding-side-panel/lib/index.css'
 import { FaSearch } from "react-icons/fa"
@@ -12,6 +13,7 @@ export default function Header(props) {
     const [openPanel, setOpenPanel] = useState(false)
     const [search, setSearch] = useState('')
     const { changeCategory } = useContext(CategoryContext)
+    const { changeData } = useContext(DataContext)
     let history = useHistory()
     let display = styles.header
 
@@ -19,8 +21,10 @@ export default function Header(props) {
         display = styles.headerNone
     }
 
-    const handleSetCategoria = (elem) => {
-        changeCategory(elem)
+    const handleSetCategoria = async (elem) => {
+        await changeCategory(elem)
+        await changeData(`/category/${elem}`)
+        history.push("/cat")
     }
 
     const handleSearch = (event) => {
@@ -38,7 +42,7 @@ export default function Header(props) {
     return (
         <div id={display}>
             <section id={styles.searchContainer}>
-                <img id={styles.headerTitle} src={logo} alt='Logo ToutSport Todo para Deportistas'/>
+                <img id={styles.headerTitle} src={logo} alt='Logo ToutSport Todo para Deportistas' />
                 <div id={styles.search}>
                     <div id={styles.headerSearchBtn} onClick={() => setOpenPanel(true)}>
                         <FaSearch id={styles.headerSearchIcon} />
@@ -62,33 +66,33 @@ export default function Header(props) {
                                 />
                             </form>
                         </div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('running')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('running')}>
                             Running
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('ciclismo')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('ciclismo')}>
                             Ciclismo
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('tennis')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('tennis')}>
                             Tennis
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('baloncesto')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('baloncesto')}>
                             Baloncesto
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('futbol')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('futbol')}>
                             Futbol
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('rugby')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('rugby')}>
                             Rugby
-                        </Link>
+                        </div>
                         <div className={styles.separator}></div>
-                        <Link to="/cat" className={styles.tags} onClick={() => handleSetCategoria('artes marciales')}>
+                        <div className={styles.tags} onClick={() => handleSetCategoria('artes marciales')}>
                             Artes Marciales
-                        </Link>
+                        </div>
                         <IoIosCloseCircleOutline id={styles.closeBtn} onClick={() => setOpenPanel(false)} />
                     </div>
                 </SlidingPanel>

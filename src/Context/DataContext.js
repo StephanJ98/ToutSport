@@ -4,8 +4,11 @@ export const DataContext = createContext();
 
 const DataContextProvider = (props) => {
     const [data, setData] = useState([]);
-    const changeData = (/*elem*/) => {
-        fetch(`https://toutsport-api.herokuapp.com/list`)
+    const changeData = (elem) => {
+        if (!elem) {
+            elem = '/list'
+        }
+        fetch(`https://toutsport-api.herokuapp.com${elem}`)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -19,9 +22,9 @@ const DataContextProvider = (props) => {
     }
 
     return (
-        <DataContextProvider.Provider value={{ data, changeData }}>
+        <DataContext.Provider value={{ data, changeData }}>
             {props.children}
-        </DataContextProvider.Provider>
+        </DataContext.Provider>
     )
 }
 

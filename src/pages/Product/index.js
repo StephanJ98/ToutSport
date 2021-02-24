@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
+import { DataContext } from '../../Context/DataContext'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import styles from './Product.module.css'
 import Header from '../../components/HeaderBis'
 
 export default function Product() {
     const [item, setItem] = useState({ id: '', image: '', title: '', sport: '', store: '', price: 0 })
-    let elemId = window.location.href.split('/')[window.location.href.split('/').length - 1]
+    const { data } = useContext(DataContext)
 
     useEffect(() => {
-        if (item.id === '') {
-            fetch(`https://toutsport-api.herokuapp.com/list/${elemId}`)
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        setItem(result)
-                    },
-                    (error) => {
-                        console.log(error)
-                    }
-                )
-        }
-    })
+        setItem(data)
+    }, [data])
 
     return (
         <div id={styles.mainContainer}>

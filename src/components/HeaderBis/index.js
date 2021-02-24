@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import styles from './HeaderBis.module.css'
 import { CategoryContext } from '../../Context/CategoryContext'
+import { DataContext } from '../../Context/DataContext'
 import SlidingPanel from 'react-sliding-side-panel'
 import 'react-sliding-side-panel/lib/index.css'
 import { FaSearch } from "react-icons/fa"
@@ -12,6 +13,7 @@ export default function HeaderBis(props) {
     const [openPanel, setOpenPanel] = useState(false)
     const [search, setSearch] = useState('')
     const { changeCategory } = useContext(CategoryContext)
+    const { changeData } = useContext(DataContext)
     let history = useHistory()
     let variant = styles.header
 
@@ -19,9 +21,10 @@ export default function HeaderBis(props) {
         variant = styles.headerVar
     }
 
-    const handleSetCategoria = (elem) => {
-        changeCategory(elem)
-        setOpenPanel(false)
+    const handleSetCategoria = async (elem) => {
+        await changeCategory(elem)
+        await changeData(`/category/${elem}`)
+        await setOpenPanel(false)
         history.push("/cat")
     }
 
@@ -37,8 +40,8 @@ export default function HeaderBis(props) {
         history.push("/cat")
     }
 
-    const handleClick = () => {
-        history.push('/')
+    const handleClick = async () => {
+        await history.push('/')
     }
 
     return (
