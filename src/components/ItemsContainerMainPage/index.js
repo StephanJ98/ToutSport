@@ -10,9 +10,11 @@ export default function ItemsContainerMainPage() {
     let history = useHistory()
 
     useEffect(() => {
-        changeData('/list')
-        setProducts(data)
-    }, [data, changeData])
+        if (products.length === 0  || products.length === undefined) {
+            changeData('/list')
+            setProducts(data)
+        }
+    }, [products.length, data, changeData])
 
     const handleClick = async (id) => {
         await changeData(`/list/${id}`)
@@ -20,7 +22,7 @@ export default function ItemsContainerMainPage() {
         await history.push(`/product/${id}`)
     }
 
-    if (products.length > 0) {
+    if (products.length > 1) {
         products.forEach(item => {
             if (items.length <= 7) {
                 items.push(
