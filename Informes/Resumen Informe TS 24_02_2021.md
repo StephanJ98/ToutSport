@@ -21,7 +21,7 @@
   - Boton ***Ver precio*** para mostrar modal precio o para redireccionar a la web de la marca
   - Boton ***Ir a la pagina*** para acceder al producto en la web del propietario
   - Comentarios de clientes :x: (Requiere de una base de datos demasiado grande, que no podemos usar con el metodo de almacenamiento actual)
-  - Comentarios y ratin de la web de la marca :x: ( Requiere de un acceso a la base de datos de la marca y acceso a su API)
+  - Comentarios y rating de la web de la marca :x: ( Requiere de un acceso a la base de datos de la marca y acceso a su API)
 - Sistema de renovacion ?
 
 ## Metodos de compra
@@ -45,7 +45,7 @@
 
 ##### Version  mobil independiente o web adaptada ?
 
-- Quitar las flechas del carousel.
+- ~~Quitar las flechas del carousel.~~
 - En el carousel quitar la cita y añadir un enlace a la pagina de la categoria correspondiente.
 - Añadir un apartado de contacto. Enlace a email o telegram.
 - Cambio de idioma {esto se añade cuando la web estea terminada}
