@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import styles from './HeaderBis.module.css'
 import { CategoryContext } from '../../Context/CategoryContext'
-import { DataContext } from '../../Context/DataContext'
 import SlidingPanel from 'react-sliding-side-panel'
 import 'react-sliding-side-panel/lib/index.css'
 import { FaSearch } from "react-icons/fa"
@@ -13,7 +12,6 @@ export default function HeaderBis(props) {
     const [openPanel, setOpenPanel] = useState(false)
     const [search, setSearch] = useState('')
     const { changeCategory } = useContext(CategoryContext)
-    const { changeData } = useContext(DataContext)
     let history = useHistory()
     let variant = styles.header
 
@@ -23,7 +21,6 @@ export default function HeaderBis(props) {
 
     const handleSetCategoria = async (elem) => {
         await changeCategory(elem)
-        await changeData(`/category/${elem}`)
         await setOpenPanel(false)
         history.push("/cat")
     }
@@ -34,7 +31,7 @@ export default function HeaderBis(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const data = search.toLowerCase().trimStart().replace(/ /g,'_')
+        const data = search.toLowerCase().trimStart().replace(/ /g, '_')
         setSearch('')
         handleSetCategoria(data)
         history.push("/cat")
@@ -44,10 +41,14 @@ export default function HeaderBis(props) {
         await history.push('/')
     }
 
+    const handleViewAll = () => {
+        history.push("/all")
+    }
+
     return (
         <div id={variant}>
             <section id={styles.searchContainerBis}>
-                <img id={styles.headerTitle} src={logo} onClick={handleClick} alt='Logo ToutSport Todo para Deportistas'/>
+                <img id={styles.headerTitle} src={logo} onClick={handleClick} alt='Logo ToutSport Todo para Deportistas' />
                 <div id={styles.search}>
                     <div id={styles.headerSearchBtn} onClick={() => setOpenPanel(true)}>
                         <FaSearch id={styles.headerSearchIcon} />
@@ -95,8 +96,8 @@ export default function HeaderBis(props) {
                             <p>Rugby</p>
                         </div>
                         <div className={styles.separator}></div>
-                        <div className={styles.tags} onClick={() => handleSetCategoria('artes marciales')}>
-                            <p>Artes Marciales</p>
+                        <div className={styles.tags} onClick={() => handleViewAll()}>
+                            Ver Todas
                         </div>
                         <IoIosCloseCircleOutline id={styles.closeBtn} onClick={() => setOpenPanel(false)} />
                     </div>

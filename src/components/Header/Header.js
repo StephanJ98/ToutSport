@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import styles from './Header.module.css'
 import { CategoryContext } from '../../Context/CategoryContext'
-import { DataContext } from '../../Context/DataContext'
 import SlidingPanel from 'react-sliding-side-panel'
 import 'react-sliding-side-panel/lib/index.css'
 import { FaSearch } from "react-icons/fa"
@@ -13,7 +12,6 @@ export default function Header(props) {
     const [openPanel, setOpenPanel] = useState(false)
     const [search, setSearch] = useState('')
     const { changeCategory } = useContext(CategoryContext)
-    const { changeData } = useContext(DataContext)
     let history = useHistory()
     let display = styles.header
 
@@ -23,7 +21,6 @@ export default function Header(props) {
 
     const handleSetCategoria = async (elem) => {
         await changeCategory(elem)
-        await changeData(`/category/${elem}`)
         history.push("/cat")
     }
 
@@ -37,6 +34,10 @@ export default function Header(props) {
         setSearch('')
         handleSetCategoria(data)
         history.push("/cat")
+    }
+
+    const handleViewAll = () => {
+        history.push("/all")
     }
 
     return (
@@ -90,8 +91,8 @@ export default function Header(props) {
                             Rugby
                         </div>
                         <div className={styles.separator}></div>
-                        <div className={styles.tags} onClick={() => handleSetCategoria('artes marciales')}>
-                            Artes Marciales
+                        <div className={styles.tags} onClick={() => handleViewAll()}>
+                            Ver Todas
                         </div>
                         <IoIosCloseCircleOutline id={styles.closeBtn} onClick={() => setOpenPanel(false)} />
                     </div>

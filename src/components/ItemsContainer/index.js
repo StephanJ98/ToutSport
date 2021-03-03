@@ -2,27 +2,34 @@ import React, { useContext, useEffect, useState } from 'react'
 import styles from './ItemsContainer.module.css'
 import { useHistory } from "react-router-dom"
 import { CategoryContext } from '../../Context/CategoryContext'
-import { DataContext } from '../../Context/DataContext'
 
 export default function ItemsContainer() {
     const { category } = useContext(CategoryContext)
-    const { data } = useContext(DataContext)
-    const [products, setProducts] = useState([])
+    const [data, setData] = useState([])
     let items = []
     let history = useHistory()
 
     useEffect(() => {
-        if (products.length === 0) {
-            setProducts(data)
+        if (data.length === 0) {
+            fetch('https://toutsport-api.herokuapp.com/list')
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        setData(result)
+                    },
+                    (error) => {
+                        console.log(error)
+                    }
+                )
         }
-    }, [products.length, data])
+    })
 
     const handleClick = (id) => {
         history.push(`/product/${id}`)
     }
 
     if (category === 'null' || category === '') {
-        products.forEach(item => {
+        data.forEach(item => {
             items.push(
                 <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
                     <p className={styles.text}>{item.title}</p>
@@ -33,7 +40,7 @@ export default function ItemsContainer() {
         }
         )
     } else {
-        products.forEach(item => {
+        data.forEach(item => {
             if (category === item.sport) {
                 items.push(
                     <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>

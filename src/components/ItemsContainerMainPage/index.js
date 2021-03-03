@@ -1,29 +1,45 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './ItemsContainerMainPage.module.css'
 import { useHistory } from "react-router-dom"
-import { DataContext } from '../../Context/DataContext'
 
 export default function ItemsContainerMainPage() {
-    const { data, changeData } = useContext(DataContext)
-    const [products, setProducts] = useState([])
+    const [data, setData] = useState([])
     let items = []
     let history = useHistory()
 
     useEffect(() => {
-        if (products.length === 0  || products.length === undefined) {
-            changeData('/list')
-            setProducts(data)
+        if (data.length === 0 || data.length === undefined) {
+            fetch(`https://toutsport-api.herokuapp.com/list`)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        setData(result)
+                    },
+                    (error) => {
+                        setData([])
+                        console.log(error)
+                    }
+                )
         }
-    }, [products.length, data, changeData])
+    }, [data.length])
 
     const handleClick = async (id) => {
-        await changeData(`/list/${id}`)
-        await setProducts(data)
+        fetch(`https://toutsport-api.herokuapp.com/list/${id}`)
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    setData(result)
+                },
+                (error) => {
+                    setData([])
+                    console.log(error)
+                }
+            )
         await history.push(`/product/${id}`)
     }
 
-    if (products.length > 1) {
-        products.forEach(item => {
+    if (data.length > 1) {
+        data.forEach(item => {
             if (items.length <= 7) {
                 items.push(
                     <div key={item.id} className={styles.itemContainerMainPage} onClick={() => handleClick(item.id)}>

@@ -52,7 +52,7 @@ export default function Main() {
         <div id={styles.mainContainer}>
             <Header display={display} />
             <div id={styles.mainBody} className='targetObserver2'>
-                <Carousel id={styles.carousel} indicators={true} interval={2000}>
+                <Carousel controls={false} pause={false} id={styles.carousel} indicators={true} interval={2000}>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
                             className={styles.sliderImage}
