@@ -43,9 +43,8 @@ export default function ItemsContainerMainPage() {
             if (items.length <= 7) {
                 items.push(
                     <div key={item.id} className={styles.itemContainerMainPage} onClick={() => handleClick(item.id)}>
-                        <img className={styles.imageItemContainerMainPage} src={item.image} alt={item.title} />
+                        <img className={styles.imageItemContainerMainPage} src={item.images[0]} alt={item.title} />
                         <p className={styles.textMainPage}>{item.title.toLowerCase()}</p>
-                        <p className={styles.price}>{item.price} €</p>
                     </div>
                 )
             }

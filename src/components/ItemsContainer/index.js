@@ -33,8 +33,7 @@ export default function ItemsContainer() {
             items.push(
                 <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
                     <p className={styles.text}>{item.title}</p>
-                    <p className={styles.price}>{item.price} €</p>
-                    <img className={styles.image} src={item.image} alt={item.title} />
+                    <img className={styles.image} src={item.images[0]} alt={item.title} />
                 </div>
             )
         }
@@ -45,8 +44,7 @@ export default function ItemsContainer() {
                 items.push(
                     <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
                         <p className={styles.text}>{item.title}</p>
-                        <p className={styles.price}>{item.price} €</p>
-                        <img className={styles.image} src={item.image} alt={item.title} />
+                        <img className={styles.image} src={item.images[0]} alt={item.title} />
                     </div>
                 )
             }

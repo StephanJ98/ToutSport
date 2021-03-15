@@ -78,8 +78,8 @@
 }
 .emptyText {
     font-size: 50px;
-    font-family: 'Staatliches';
-    /*font-family: 'BebasNeue';*/
+    /*font-family: 'Staatliches';*/
+    font-family: 'BebasNeue';
     /*font-family: 'Oswald';*/
     /*font-family: 'Imbue';*/
     color: #29235c;

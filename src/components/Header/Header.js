@@ -30,10 +30,10 @@ export default function Header(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const data = search.toLowerCase().trimStart().replace(/ /g, '_')
+        const data = search.toLowerCase().trimStart()
+        console.log(data)
         setSearch('')
-        handleSetCategoria(data)
-        history.push("/cat")
+        //history.push("/cat")
     }
 
     const handleViewAll = () => {
