@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
+import Rating from '@material-ui/lab/Rating'
 import styles from './Product.module.css'
 import Header from '../../components/HeaderBis'
 
 export default function Product() {
-    const [item, setItem] = useState({ id: '', image: '', title: '', sport: '', store: '', price: 0 })
+    const [item, setItem] = useState({ id: '', title: '', images: [], rating: 0, description: '', sport: '', store: '', caracteristicas: {peso: 0, talla: 0, creador: ''}, tags: [] })
     let elemId = window.location.href.split('/')[window.location.href.split('/').length - 1]
 
     useEffect(() => {
@@ -29,22 +30,36 @@ export default function Product() {
                 <div id={styles.textContainer}>
                     <h2 className={styles.textSubContainer} id={styles.title}>{item.title}</h2>
                     <div className={styles.textSubContainer}>
-                        <p id={styles.text}>Tipo de deporte:</p>
-                        <p>{item.sport}</p>
+                        <Rating name="rating-read" size="large" max={5} value={item.rating} precision={0.5} readOnly />
+                    </div>
+                    <div className={styles.textSubContainerBis}>
+                        <div className={styles.textSubContainerBis}>
+                            <p id={styles.text}>Peso:</p>
+                            <p>{item.caracteristicas.peso}gr</p>
+                        </div>
+                        <div className={styles.textSubContainerBis}>
+                            <p id={styles.text}>Talla:</p>
+                            <p>{item.caracteristicas.talla}</p>
+                        </div>
+                    </div>
+                    <div className={styles.textSubContainerBis}>
+                        <div className={styles.textSubContainerBis}>
+                            <p id={styles.text}>Deporte:</p>
+                            <p>{item.sport}</p>
+                        </div>
+                        <div className={styles.textSubContainerBis}>
+                            <p id={styles.text}>Tienda:</p>
+                            <p>{item.store}</p>
+                        </div>
                     </div>
                     <div className={styles.textSubContainer}>
-                        <p id={styles.text}>Tienda:</p>
-                        <p>{item.store}</p>
-                    </div>
-                    <div className={styles.textSubContainer}>
-                        <p id={styles.text}>Precio: </p>
-                        <p>{item.price} €</p>
+                        <p id={styles.description}>{item.description}</p>
                     </div>
                 </div>
                 <div id={styles.imgContainer}>
                     <TransformWrapper>
                         <TransformComponent>
-                            <img id={styles.image} src={item.image} alt='product' />
+                            <img id={styles.image} src={item.images[0]} alt='product' />
                         </TransformComponent>
                     </TransformWrapper>
                 </div>

@@ -5,6 +5,7 @@ import Main from './pages/Main'
 import Categories from './pages/Categories'
 import Product from './pages/Product'
 import AllCategories from './pages/AllCategories'
+import SearchProducts from './pages/SearchProducts'
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path='/all'>
               <AllCategories />
+            </Route>
+            <Route path='/search'>
+              <SearchProducts />
             </Route>
           </Switch>
         </Router>

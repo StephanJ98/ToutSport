@@ -31,10 +31,15 @@ export default function HeaderBis(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        const data = search.toLowerCase().trimStart().replace(/ /g, '_')
+        let data = search.replace(/ /g, ",")
+        do {
+            if (data.slice(-1) === ",") {
+                data = data.slice(0, -1)
+            }
+        } while (data.slice(-1) === ",");
         setSearch('')
-        handleSetCategoria(data)
-        history.push("/cat")
+        window.localStorage.setItem("data", data)
+        history.replace("/search")
     }
 
     const handleClick = async () => {

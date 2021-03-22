@@ -37,7 +37,7 @@ export default function AllCategories() {
 
     const handleSetCategoria = async (elem) => {
         await changeCategory(elem)
-        await history.push("/cat")
+        history.push("/cat")
     }
 
     return (

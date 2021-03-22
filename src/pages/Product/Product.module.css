@@ -45,8 +45,20 @@
     justify-content: center;
     text-transform: capitalize;
     font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
 }
-@media (min-width: 800px) {
+.textSubContainerBis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+    font-size: large;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+@media (min-width: 800px) { /* Small Screen */
     #container {
         display: flex;
         flex-direction: row;
@@ -69,6 +81,18 @@
         justify-content: center;
         text-transform: capitalize;
         font-size: large;
-        padding-bottom: 100px;
+        padding-bottom: 10px;
+    }
+    .textSubContainerBis {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-transform: capitalize;
+        font-size: large;
+        padding-bottom: 10px;
+    }
+    #description {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
