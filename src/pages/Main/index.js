@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import { CategoryContext } from '../../Context/CategoryContext'
 import Header from '../../components/Header/Header'
-import Carousel from 'react-bootstrap/Carousel';
+import Vip from '../../components/Vip'
+import Carousel from 'react-bootstrap/Carousel'
 import styles from './Main.module.css'
 import './carousel.css'
 import alpes from '../../assets/image/alpes.jpg'
@@ -11,18 +12,15 @@ import box from '../../assets/image/box.jpg'
 import climb from '../../assets/image/climb.jpg'
 import climb2 from '../../assets/image/climb2.jpg'
 import dh from '../../assets/image/dh.jpg'
-import gym from '../../assets/image/gym.jpg'
 import kick from '../../assets/image/kick.jpg'
 import kid from '../../assets/image/kid.jpg'
 import loeb from '../../assets/image/loeb.jpg'
 import neige from '../../assets/image/neige.jpg'
 import roadride from '../../assets/image/roadride.jpg'
 import run from '../../assets/image/run.jpg'
-import send from '../../assets/image/send.jpg'
 import surf from '../../assets/image/surf.jpg'
 import wave from '../../assets/image/wave.jpg'
 import vtt from '../../assets/image/vtt.jpg'
-import train from '../../assets/image/train.webp'
 import wolfpack from '../../assets/image/wolfpack.jpg'
 import ItemsContainerMainPage from '../../components/ItemsContainerMainPage';
 
@@ -68,7 +66,7 @@ export default function Main() {
         <div id={styles.mainContainer}>
             <Header display={display} />
             <div id={styles.mainBody} className='targetObserver2'>
-                <Carousel controls={false} pause={false} id={styles.carousel} indicators={true} interval={2000}>
+                <Carousel controls={false} pause={false} id={styles.carousel} indicators={true} interval={5000}>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
                             className={styles.sliderImage}
@@ -76,7 +74,21 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip id='2' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
+                                <p>BTT</p>
+                            </div>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    {/*<Carousel.Item className={styles.carouselItem}>
+                        <img
+                            className={styles.sliderImage}
+                            src={climb2}
+                            alt="First slide"
+                        />
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
+                            <div className={styles.card} onClick={() => handleSetCategoria('cat')}>
                                 <p>BTT</p>
                             </div>
                         </Carousel.Caption>
@@ -84,26 +96,15 @@ export default function Main() {
                     <Carousel.Item className={styles.carouselItem}>
                         <img
                             className={styles.sliderImage}
-                            src={climb2}
-                            alt="First slide"
-                        />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
-                            <div className={styles.card} onClick={() => handleSetCategoria('cat')}>
-                                <p>BTT</p>
-                            </div>
-                        </Carousel.Caption>*/}
-                    </Carousel.Item>
-                    <Carousel.Item className={styles.carouselItem}>
-                        <img
-                            className={styles.sliderImage}
                             src={kid}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('cat')}>
                                 <p>BTT</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -112,6 +113,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
                                 <p>Ciclismo</p>
                             </div>
@@ -124,6 +126,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
                                 <p>Ciclismo</p>
                             </div>
@@ -135,11 +138,12 @@ export default function Main() {
                             src={wave}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
                                 <p>Ciclismo</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -148,6 +152,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
@@ -159,11 +164,12 @@ export default function Main() {
                             src={surf}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -171,35 +177,12 @@ export default function Main() {
                             src={alpes}
                             alt="Second slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
-                    </Carousel.Item>
-                    <Carousel.Item className={styles.carouselItem}>
-                        <img
-                            className={styles.sliderImage}
-                            src={gym}
-                            alt="Third slide"
-                        />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
-                            <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
-                            </div>
-                        </Carousel.Caption>*/}
-                    </Carousel.Item>
-                    <Carousel.Item className={styles.carouselItem}>
-                        <img
-                            className={styles.sliderImage}
-                            src={send}
-                            alt="Third slide"
-                        />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
-                            <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
-                            </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -207,11 +190,12 @@ export default function Main() {
                             src={backpack}
                             alt="Third slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -219,11 +203,12 @@ export default function Main() {
                             src={loeb}
                             alt="Third slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -231,11 +216,12 @@ export default function Main() {
                             src={box}
                             alt="Third slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -244,6 +230,7 @@ export default function Main() {
                             alt="Third slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
                                 <p>BTT</p>
                             </div>
@@ -255,11 +242,12 @@ export default function Main() {
                             src={climb}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -267,11 +255,12 @@ export default function Main() {
                             src={kick}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
+                        </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item className={styles.carouselItem}>
                         <img
@@ -279,24 +268,13 @@ export default function Main() {
                             src={neige}
                             alt="First slide"
                         />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
+                        <Carousel.Caption className={styles.carouselTextLigth}>
+                            <Vip className={styles.vip} />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p>Running</p>
                             </div>
-                        </Carousel.Caption>*/}
-                    </Carousel.Item>
-                    <Carousel.Item className={styles.carouselItem}>
-                        <img
-                            className={styles.sliderImage}
-                            src={train}
-                            alt="First slide"
-                        />
-                        {/*<Carousel.Caption className={styles.carouselTextLigth}>
-                            <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
-                            </div>
-                        </Carousel.Caption>*/}
-                    </Carousel.Item>
+                        </Carousel.Caption>
+                    </Carousel.Item>*/}
                 </Carousel>
             </div>
             <div id='targetObserver'>

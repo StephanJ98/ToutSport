@@ -102,7 +102,7 @@ export default function HeaderBis(props) {
                         </div>
                         <div className={styles.separator}></div>
                         <div className={styles.tags} onClick={() => handleViewAll()}>
-                            Ver Todas
+                            Categorías
                         </div>
                         <IoIosCloseCircleOutline id={styles.closeBtn} onClick={() => setOpenPanel(false)} />
                     </div>
