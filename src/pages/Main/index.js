@@ -6,7 +6,7 @@ import Vip from '../../components/Vip'
 import Carousel from 'react-bootstrap/Carousel'
 import styles from './Main.module.css'
 import './carousel.css'
-import alpes from '../../assets/image/alpes.jpg'
+/*import alpes from '../../assets/image/alpes.jpg'
 import backpack from '../../assets/image/backpack.jpg'
 import box from '../../assets/image/box.jpg'
 import climb from '../../assets/image/climb.jpg'
@@ -19,9 +19,9 @@ import neige from '../../assets/image/neige.jpg'
 import roadride from '../../assets/image/roadride.jpg'
 import run from '../../assets/image/run.jpg'
 import surf from '../../assets/image/surf.jpg'
-import wave from '../../assets/image/wave.jpg'
+import wave from '../../assets/image/wave.jpg'*/
 import vtt from '../../assets/image/vtt.jpg'
-import wolfpack from '../../assets/image/wolfpack.jpg'
+/*import wolfpack from '../../assets/image/wolfpack.jpg'*/
 import ItemsContainerMainPage from '../../components/ItemsContainerMainPage';
 
 
