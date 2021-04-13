@@ -76,7 +76,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='2' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
-                                <p>BTT</p>
+                            <p className={styles.btn}><span>BTT</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -90,7 +90,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='7' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                            <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -104,7 +104,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='14' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
-                                <p>MMA</p>
+                                <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -118,7 +118,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='4' />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
-                                <p>Ciclismo</p>
+                                <p className={styles.btn}><span>Ciclismo</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -132,7 +132,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='4' />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
-                                <p>Ciclismo</p>
+                                <p className={styles.btn}><span>Ciclismo</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -146,7 +146,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='15' />
                             <div className={styles.card} onClick={() => handleSetCategoria('surf')}>
-                                <p>Surf</p>
+                                <p className={styles.btn}><span>Surf</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -160,7 +160,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='13' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -174,7 +174,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='19' />
                             <div className={styles.card} onClick={() => handleSetCategoria('surf')}>
-                                <p>Surf</p>
+                                <p className={styles.btn}><span>Surf</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -188,7 +188,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='10' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -202,7 +202,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='10' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -216,7 +216,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='7' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -230,7 +230,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='14' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
-                                <p>MMA</p>
+                                <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -244,7 +244,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='0' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
-                                <p>BTT</p>
+                                <p className={styles.btn}><span>BTT</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -258,7 +258,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='10' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -272,7 +272,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='14' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
-                                <p>MMA</p>
+                                <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -284,9 +284,9 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip  />
+                            <Vip />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                                <p>Running</p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
