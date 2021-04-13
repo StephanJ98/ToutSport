@@ -76,7 +76,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='2' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
-                            <p className={styles.btn}><span>BTT</span><em></em></p>
+                                <p className={styles.btn}><span>BTT</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>
@@ -90,7 +90,7 @@ export default function Main() {
                         <Carousel.Caption className={styles.carouselTextLigth}>
                             <Vip id='7' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
-                            <p className={styles.btn}><span>Running</span><em></em></p>
+                                <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
                         </Carousel.Caption>
                     </Carousel.Item>

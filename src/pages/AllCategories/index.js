@@ -28,8 +28,8 @@ export default function AllCategories() {
     if (data.length > 0) {
         data.forEach(element => {
             item.push(
-                <div className={styles.card} key={Math.random() * 100} onClick={() => handleSetCategoria(element)}>
-                    <p>{element}</p>
+                <div className={styles.btn} key={Math.random() * 100} onClick={() => handleSetCategoria(element)}>
+                    <span>{element}</span><em></em>
                 </div>
             )
         })
