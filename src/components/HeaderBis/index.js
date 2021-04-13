@@ -39,7 +39,7 @@ export default function HeaderBis(props) {
         } while (data.slice(-1) === ",");
         setSearch('')
         window.localStorage.setItem("data", data)
-        history.replace("/search")
+        history.go(0)
     }
 
     const handleClick = async () => {
