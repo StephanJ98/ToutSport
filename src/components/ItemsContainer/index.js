@@ -31,7 +31,7 @@ export default function ItemsContainer() {
     if (category === 'null' || category === '') {
         data.forEach(item => {
             items.push(
-                <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
+                <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item._id)}>
                     <p className={styles.text}>{item.title}</p>
                     <img className={styles.image} src={item.images[0]} alt={item.title} />
                 </div>
@@ -42,7 +42,7 @@ export default function ItemsContainer() {
         data.forEach(item => {
             if (category === item.sport) {
                 items.push(
-                    <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item.id)}>
+                    <div key={item.id} className={styles.itemContainer} onClick={() => handleClick(item._id)}>
                         <p className={styles.text}>{item.title}</p>
                         <img className={styles.image} src={item.images[0]} alt={item.title} />
                     </div>

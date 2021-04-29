@@ -28,7 +28,7 @@ export default function Vip(props) {
     }
 
     return (
-        <div className={styles.container} onClick={() => handleClick(item.id)}>
+        <div className={styles.container} onClick={() => handleClick(item._id)}>
             <p className={styles.text}>{item.title}</p>
             <img className={styles.image} src={item.images[0]} alt={item.title} />
         </div>
