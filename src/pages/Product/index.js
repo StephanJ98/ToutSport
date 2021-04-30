@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import Rating from '@material-ui/lab/Rating'
 import styles from './Product.module.css'
 import Header from '../../components/HeaderBis'
 import { Tooltip } from '@material-ui/core'
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
+import InnerImageZoom from 'react-inner-image-zoom'
 
 export default function Product() {
     const [open, setOpen] = useState(false)
@@ -50,22 +51,22 @@ export default function Product() {
                     <div className={styles.textSubContainer}>
                         <Rating name="rating-read" size="large" max={5} value={item.rating} precision={0.5} readOnly />
                     </div>
-                    <div className={styles.textSubContainerBis}>
-                        <div className={styles.textSubContainerBis}>
+                    <div className={styles.textSubContainer}>
+                        <div className={styles.textSubContainer}>
                             <p id={styles.text}>Peso:</p>
                             <p>{item.caracteristicas.peso}gr</p>
                         </div>
-                        <div className={styles.textSubContainerBis}>
+                        <div className={styles.textSubContainer}>
                             <p id={styles.text}>Talla:</p>
                             <p>{item.caracteristicas.talla}</p>
                         </div>
                     </div>
-                    <div className={styles.textSubContainerBis}>
-                        <div className={styles.textSubContainerBis}>
+                    <div className={styles.textSubContainer}>
+                        <div className={styles.textSubContainer}>
                             <p id={styles.text}>Deporte:</p>
                             <p>{item.sport}</p>
                         </div>
-                        <div className={styles.textSubContainerBis}>
+                        <div className={styles.textSubContainer}>
                             <p id={styles.text}>Tienda:</p>
                             <p>{item.store}</p>
                         </div>
@@ -90,11 +91,7 @@ export default function Product() {
                     </div>
                 </div>
                 <div id={styles.imgContainer}>
-                    <TransformWrapper>
-                        <TransformComponent>
-                            <img id={styles.image} src={item.images[0]} alt='product' />
-                        </TransformComponent>
-                    </TransformWrapper>
+                    <InnerImageZoom alt='Imagen del Producto' className={styles.image} src={item.images[0]} zoomScale={0.9} />
                 </div>
             </div>
         </div>
