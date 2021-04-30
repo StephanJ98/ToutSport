@@ -3,9 +3,11 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 import Rating from '@material-ui/lab/Rating'
 import styles from './Product.module.css'
 import Header from '../../components/HeaderBis'
+import { Tooltip } from '@material-ui/core'
 
 export default function Product() {
-    const [item, setItem] = useState({ id: '', title: '', images: [], rating: 0, description: '', sport: '', store: '', caracteristicas: {peso: 0, talla: 0, creador: ''}, tags: [] })
+    const [open, setOpen] = useState(false)
+    const [item, setItem] = useState({ id: '', title: '', images: [], rating: 0, description: '', sport: '', store: '', caracteristicas: { peso: 0, talla: 0, creador: '' }, tags: [] })
     let elemId = window.location.href.split('/')[window.location.href.split('/').length - 1]
 
     useEffect(() => {
@@ -22,6 +24,22 @@ export default function Product() {
                 )
         }
     })
+
+    const handleClick = () => {
+        navigator.clipboard.writeText(`https://toutsport.netlify.app/product/${elemId}`)
+        handleTooltipOpen()
+    }
+
+    const handleTooltipClose = () => {
+        setOpen(false)
+    }
+
+    const handleTooltipOpen = () => {
+        setOpen(true)
+        setTimeout(() => {
+            handleTooltipClose()
+        }, 3000)
+    }
 
     return (
         <div id={styles.mainContainer}>
@@ -54,6 +72,21 @@ export default function Product() {
                     </div>
                     <div className={styles.textSubContainer}>
                         <p id={styles.description}>{item.description}</p>
+                    </div>
+                    <div className={styles.textSubContainer}>
+                        <Tooltip
+                            title='Copiado al portapapeles'
+                            PopperProps={{
+                                disablePortal: true,
+                            }}
+                            onClose={handleTooltipClose}
+                            open={open}
+                            disableFocusListener
+                            disableHoverListener
+                            disableTouchListener
+                        >
+                            <div className={styles.shareBtn} onClick={() => handleClick()}>Compartir</div>
+                        </Tooltip>
                     </div>
                 </div>
                 <div id={styles.imgContainer}>
