@@ -74,7 +74,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='2' />
+                            <Vip id='608a6e54cd591e0043f9ef0f' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
                                 <p className={styles.btn}><span>BTT</span><em></em></p>
                             </div>
@@ -88,7 +88,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='7' />
+                            <Vip id='608a7a79e05898003e28527c' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -102,7 +102,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='14' />
+                            <Vip id='608a7a2abdee1400464eba2f' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
                                 <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
@@ -116,7 +116,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='4' />
+                            <Vip id='608a6d62a1ea55001da52661' />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
                                 <p className={styles.btn}><span>Ciclismo</span><em></em></p>
                             </div>
@@ -130,7 +130,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='4' />
+                            <Vip id='608a704eeeee980020c17810' />
                             <div className={styles.card} onClick={() => handleSetCategoria('ciclismo')}>
                                 <p className={styles.btn}><span>Ciclismo</span><em></em></p>
                             </div>
@@ -144,7 +144,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='15' />
+                            <Vip id='608a77deeeee980020c17811' />
                             <div className={styles.card} onClick={() => handleSetCategoria('surf')}>
                                 <p className={styles.btn}><span>Surf</span><em></em></p>
                             </div>
@@ -158,7 +158,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='13' />
+                            <Vip id='608a78b8e944a200261bc0a5' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -172,7 +172,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='19' />
+                            <Vip id='608a6853eeee980020c1780d' />
                             <div className={styles.card} onClick={() => handleSetCategoria('surf')}>
                                 <p className={styles.btn}><span>Surf</span><em></em></p>
                             </div>
@@ -186,7 +186,7 @@ export default function Main() {
                             alt="Second slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='10' />
+                            <Vip id='608a78b8e944a200261bc0a5' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -200,7 +200,7 @@ export default function Main() {
                             alt="Third slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='10' />
+                            <Vip id='608a78b8e944a200261bc0a5' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -214,7 +214,7 @@ export default function Main() {
                             alt="Third slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='7' />
+                            <Vip id='608a79b279eff40030efd8bd' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -228,7 +228,7 @@ export default function Main() {
                             alt="Third slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='14' />
+                            <Vip id='608a77deeeee980020c17811' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
                                 <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
@@ -242,7 +242,7 @@ export default function Main() {
                             alt="Third slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='0' />
+                            <Vip id='608a6e54cd591e0043f9ef0f' />
                             <div className={styles.card} onClick={() => handleSetCategoria('btt')}>
                                 <p className={styles.btn}><span>BTT</span><em></em></p>
                             </div>
@@ -256,7 +256,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='10' />
+                            <Vip id='608a6ae7eeee980020c1780f' />
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>
@@ -270,7 +270,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip id='14' />
+                            <Vip id='608a6b62d2712f001e0130a2' />
                             <div className={styles.card} onClick={() => handleSetCategoria('mma')}>
                                 <p className={styles.btn}><span>MMA</span><em></em></p>
                             </div>
@@ -284,7 +284,7 @@ export default function Main() {
                             alt="First slide"
                         />
                         <Carousel.Caption className={styles.carouselTextLigth}>
-                            <Vip />
+                            <Vip id='608a6956eeee980020c1780e'/>
                             <div className={styles.card} onClick={() => handleSetCategoria('running')}>
                                 <p className={styles.btn}><span>Running</span><em></em></p>
                             </div>

@@ -39,6 +39,7 @@
 .imageItemContainerMainPage {
     width: 80%;
     border-radius: 5px;
+    aspect-ratio: 2/2;
 }
 .textMainPage {
     width: 79%;

@@ -42,7 +42,7 @@ export default function ItemsContainerMainPage() {
         data.forEach(item => {
             if (items.length <= 7) {
                 items.push(
-                    <div key={item.id} className={styles.itemContainerMainPage} onClick={() => handleClick(item._id)}>
+                    <div key={item._id} className={styles.itemContainerMainPage} onClick={() => handleClick(item._id)}>
                         <img className={styles.imageItemContainerMainPage} src={item.images[0]} alt={item.title} />
                         <p className={styles.textMainPage}>{item.title.toLowerCase()}</p>
                     </div>

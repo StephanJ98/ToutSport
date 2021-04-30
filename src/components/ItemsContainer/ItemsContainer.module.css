@@ -63,6 +63,7 @@
     max-height: 90%;
     border-radius: 10px;
     margin-bottom: 5px;
+    aspect-ratio: 2/2;
 }
 .text {
     position: absolute;
