@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { useHistory } from "react-router-dom"
 import styles from './HeaderBis.module.css'
+import './style.css'
 import { CategoryContext } from '../../Context/CategoryContext'
 import SlidingPanel from 'react-sliding-side-panel'
 import 'react-sliding-side-panel/lib/index.css'
