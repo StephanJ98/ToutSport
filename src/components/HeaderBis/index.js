@@ -64,7 +64,7 @@ export default function HeaderBis(props) {
                 <SlidingPanel
                     type={'right'}
                     isOpen={openPanel}
-                    size={25}
+                    size={(window.innerWidth < 600)? 100: 25}
                 >
                     <div id={styles.tagsContainer}>
                         <div id={styles.searchInput} className={styles.tags}>

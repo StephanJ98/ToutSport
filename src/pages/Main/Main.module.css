@@ -33,7 +33,6 @@
     justify-content: center;
     padding-bottom: 100px;
 }
-
 .btn {
     cursor: pointer;
     background-color: #29235c;
@@ -45,7 +44,7 @@
     top: 50%;
     transform: translate(-50%,-50%);
     z-index: 0;
-    box-shadow: 0px 0px 17px 1px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 17px 1px #00000057;
 }
 .btn span {
     color: #fff;
@@ -106,4 +105,19 @@
 .btn:hover em {
     background: #000;
     transform: scaleX(1);
+}
+@media (max-width: 600px) {
+    .btn {
+        cursor: pointer;
+        background-color: #29235c;
+        width: 330px;
+        height: 64px;
+        line-height: 64px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 0;
+        box-shadow: 0px 0px 17px 1px #00000057;
+    }
 }
