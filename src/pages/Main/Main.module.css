@@ -1,6 +1,7 @@
 #mainContainer {
     height: 100%;
     overflow-y: scroll;
+    background-color: #5c5c66;
 }
 #mainContainer::-webkit-scrollbar {
     display: none;
