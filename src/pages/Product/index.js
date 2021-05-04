@@ -101,6 +101,21 @@ export default function Product() {
                             <div className={styles.shareBtn} onClick={() => handleClick()}>Compartir</div>
                         </Tooltip>
                     </div>
+                    <div className={styles.textSubContainer}>
+                        <div
+                            className={styles.shareBtn}
+                            onClick={() => {
+                                if (item.link !== '') {
+                                    console.log(item.link)
+                                    window.open(item.link, "_blank")
+                                } else {
+                                    alert('Enlace no disponible.')
+                                }
+                            }}
+                        >
+                            Ir a la Tienda
+                        </div>
+                    </div>
                 </div>
                 <div id={styles.imgContainer}>
                     <InnerImageZoom alt='Imagen del Producto' className={styles.image} src={item.images[0]} zoomScale={0.9} />
