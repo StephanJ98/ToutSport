@@ -3,8 +3,7 @@ import Rating from '@material-ui/lab/Rating'
 import styles from './Product.module.css'
 import Header from '../../components/HeaderBis'
 import { Tooltip } from '@material-ui/core'
-import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
-import InnerImageZoom from 'react-inner-image-zoom'
+import Carousel from 'react-bootstrap/Carousel'
 import img1 from '../../assets/backgrounds/1.jpg'
 import img2 from '../../assets/backgrounds/2.jpg'
 import img3 from '../../assets/backgrounds/3.jpg'
@@ -21,6 +20,7 @@ export default function Product() {
     const bgArr = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11]
     const [open, setOpen] = useState(false)
     const [item, setItem] = useState({ id: '', title: '', images: [], rating: 0, description: '', sport: '', store: '', caracteristicas: { peso: 0, talla: 0, creador: '' }, tags: [] })
+    let image = null
     let elemId = window.location.href.split('/')[window.location.href.split('/').length - 1]
 
     useEffect(() => {
@@ -117,9 +117,22 @@ export default function Product() {
                         </div>
                     </div>
                 </div>
-                <div id={styles.imgContainer}>
-                    <InnerImageZoom alt='Imagen del Producto' className={styles.image} src={item.images[0]} zoomScale={0.9} />
-                </div>
+                <Carousel controls={true}  id={styles.imgContainer} indicators={true} interval={5000}>
+                    <Carousel.Item>
+                        <img
+                            className={styles.image}
+                            src={item.images[0]}
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className={styles.image}
+                            src={item.images[0]}
+                            alt="First slide"
+                        />
+                    </Carousel.Item>
+                </Carousel>
             </div>
         </div>
     )
